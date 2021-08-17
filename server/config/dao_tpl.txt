@@ -1,0 +1,25 @@
+// Package dao
+package dao
+import (
+	"{TplImportPrefix}/dao/internal"
+	"dnf-game-manager/library/helper"
+	"github.com/gogf/gf/util/gconv"
+)
+// {TplTableNameCamelLowerCase}Dao is the manager for logic model data accessing
+// and custom defined data operations functions management. You can define
+// methods on it to extend its functionality as you wish.
+type {TplTableNameCamelLowerCase}Dao struct {
+	internal.{TplTableNameCamelCase}Dao
+}
+var (
+	// {TplTableNameCamelCase} is globally public accessible object for table {TplTableName} operations.
+	{TplTableNameCamelCase} = {TplTableNameCamelLowerCase}Dao{
+		internal.{TplTableNameCamelCase},
+	}
+)
+// Fill with you ideas below.
+
+func (d *{TplTableNameCamelLowerCase}Dao) GetColumns(prefix ...string) string {
+	data := gconv.MapStrStr(d.Columns)
+	return helper.FormatSelectColumn(data, prefix...)
+}
