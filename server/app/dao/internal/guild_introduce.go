@@ -29,8 +29,8 @@ type guildIntroduceColumns struct {
 var (
 	// GuildIntroduce is globally public accessible object for table guild_introduce operations.
 	GuildIntroduce = GuildIntroduceDao{
-		M:     g.DB("taiwan").Model("guild_introduce").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("guild_introduce").Safe(),
+		DB:    g.DB("default"),
 		Table: "guild_introduce",
 		Columns: guildIntroduceColumns{
 			GuildId:   "guild_id",

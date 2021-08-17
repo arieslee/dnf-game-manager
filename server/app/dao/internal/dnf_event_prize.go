@@ -29,8 +29,8 @@ type dnfEventPrizeColumns struct {
 var (
 	// DnfEventPrize is globally public accessible object for table dnf_event_prize operations.
 	DnfEventPrize = DnfEventPrizeDao{
-		M:     g.DB("taiwan").Model("dnf_event_prize").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("dnf_event_prize").Safe(),
+		DB:    g.DB("default"),
 		Table: "dnf_event_prize",
 		Columns: dnfEventPrizeColumns{
 			PrizeId:   "prize_id",

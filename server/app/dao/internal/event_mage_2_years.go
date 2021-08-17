@@ -33,8 +33,8 @@ type eventMage2YearsColumns struct {
 var (
 	// EventMage2Years is globally public accessible object for table event_mage_2years operations.
 	EventMage2Years = EventMage2YearsDao{
-		M:     g.DB("taiwan").Model("event_mage_2years").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("event_mage_2years").Safe(),
+		DB:    g.DB("default"),
 		Table: "event_mage_2years",
 		Columns: eventMage2YearsColumns{
 			MId:        "m_id",

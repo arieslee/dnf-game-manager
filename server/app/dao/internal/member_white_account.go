@@ -28,8 +28,8 @@ type memberWhiteAccountColumns struct {
 var (
 	// MemberWhiteAccount is globally public accessible object for table member_white_account operations.
 	MemberWhiteAccount = MemberWhiteAccountDao{
-		M:     g.DB("taiwan").Model("member_white_account").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("member_white_account").Safe(),
+		DB:    g.DB("default"),
 		Table: "member_white_account",
 		Columns: memberWhiteAccountColumns{
 			MId:     "m_id",

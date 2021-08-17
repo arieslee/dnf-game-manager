@@ -39,8 +39,8 @@ type guildBbsColumns struct {
 var (
 	// GuildBbs is globally public accessible object for table guild_bbs operations.
 	GuildBbs = GuildBbsDao{
-		M:     g.DB("taiwan").Model("guild_bbs").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("guild_bbs").Safe(),
+		DB:    g.DB("default"),
 		Table: "guild_bbs",
 		Columns: guildBbsColumns{
 			Gno:      "gno",

@@ -1,4 +1,4 @@
-
+import {LIGHT} from "@/config/theme";
 const state = {
     text:'',
     show:false,
@@ -37,7 +37,7 @@ const actions = {
         return new Promise((resolve, reject) => {
             commit('SET_MESSAGE', {
                 text:text,
-                color:'#4CAF50',
+                color:LIGHT.success,
                 show:true,
             });
         })
@@ -46,7 +46,7 @@ const actions = {
         return new Promise((resolve, reject) => {
             commit('SET_MESSAGE', {
                 text:text,
-                color:'#B71C1C',
+                color:LIGHT.error,
                 show:true,
             });
         })
@@ -55,7 +55,7 @@ const actions = {
         return new Promise((resolve, reject) => {
             commit('SET_MESSAGE', {
                 text:text,
-                color:'#FF8F28',
+                color:LIGHT.warning,
                 show:true,
             });
         })
@@ -64,7 +64,7 @@ const actions = {
         return new Promise((resolve, reject) => {
             commit('SET_MESSAGE', {
                 text:text,
-                color:'#2392EF',
+                color:LIGHT.info,
                 show:true,
             });
         })

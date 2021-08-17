@@ -28,8 +28,8 @@ type dnfTestrMIdColumns struct {
 var (
 	// DnfTestrMId is globally public accessible object for table dnf_testr_m_id operations.
 	DnfTestrMId = DnfTestrMIdDao{
-		M:     g.DB("taiwan").Model("dnf_testr_m_id").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("dnf_testr_m_id").Safe(),
+		DB:    g.DB("default"),
 		Table: "dnf_testr_m_id",
 		Columns: dnfTestrMIdColumns{
 			MId: "m_id",

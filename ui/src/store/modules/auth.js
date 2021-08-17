@@ -55,7 +55,7 @@ const actions = {
             if(userInfo){
                 commit('SET_UID', userInfo['uid']);
                 commit('SET_ACCOUNT', userInfo['account']);
-                commit('SET_REAL_NAME', userInfo['real_name']);
+                commit('SET_QQ', userInfo['qq']);
             }
         });
     },

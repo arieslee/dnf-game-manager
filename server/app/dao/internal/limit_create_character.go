@@ -29,8 +29,8 @@ type limitCreateCharacterColumns struct {
 var (
 	// LimitCreateCharacter is globally public accessible object for table limit_create_character operations.
 	LimitCreateCharacter = LimitCreateCharacterDao{
-		M:     g.DB("taiwan").Model("limit_create_character").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("limit_create_character").Safe(),
+		DB:    g.DB("default"),
 		Table: "limit_create_character",
 		Columns: limitCreateCharacterColumns{
 			MId:            "m_id",

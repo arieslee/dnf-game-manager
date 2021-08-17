@@ -29,8 +29,8 @@ type memberCaptchaInfoColumns struct {
 var (
 	// MemberCaptchaInfo is globally public accessible object for table member_captcha_info operations.
 	MemberCaptchaInfo = MemberCaptchaInfoDao{
-		M:     g.DB("taiwan").Model("member_captcha_info").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("member_captcha_info").Safe(),
+		DB:    g.DB("default"),
 		Table: "member_captcha_info",
 		Columns: memberCaptchaInfoColumns{
 			MId:       "m_id",

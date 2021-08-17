@@ -43,8 +43,8 @@ type mWithdrawColumns struct {
 var (
 	// MWithdraw is globally public accessible object for table m_withdraw operations.
 	MWithdraw = MWithdrawDao{
-		M:     g.DB("taiwan").Model("m_withdraw").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("m_withdraw").Safe(),
+		DB:    g.DB("default"),
 		Table: "m_withdraw",
 		Columns: mWithdrawColumns{
 			MId:       "m_id",

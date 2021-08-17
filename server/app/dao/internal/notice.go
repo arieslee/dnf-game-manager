@@ -48,8 +48,8 @@ type noticeColumns struct {
 var (
 	// Notice is globally public accessible object for table notice operations.
 	Notice = NoticeDao{
-		M:     g.DB("taiwan").Model("notice").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("notice").Safe(),
+		DB:    g.DB("default"),
 		Table: "notice",
 		Columns: noticeColumns{
 			BbsName:     "bbs_name",

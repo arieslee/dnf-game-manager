@@ -33,8 +33,8 @@ type memberBroadcastColumns struct {
 var (
 	// MemberBroadcast is globally public accessible object for table member_broadcast operations.
 	MemberBroadcast = MemberBroadcastDao{
-		M:     g.DB("taiwan").Model("member_broadcast").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("member_broadcast").Safe(),
+		DB:    g.DB("default"),
 		Table: "member_broadcast",
 		Columns: memberBroadcastColumns{
 			EventId:    "event_id",

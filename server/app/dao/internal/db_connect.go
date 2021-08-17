@@ -36,8 +36,8 @@ type dbConnectColumns struct {
 var (
 	// DbConnect is globally public accessible object for table db_connect operations.
 	DbConnect = DbConnectDao{
-		M:     g.DB("taiwan").Model("db_connect").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("db_connect").Safe(),
+		DB:    g.DB("default"),
 		Table: "db_connect",
 		Columns: dbConnectColumns{
 			No:            "no",

@@ -45,8 +45,8 @@ type memberInfoEuckrColumns struct {
 var (
 	// MemberInfoEuckr is globally public accessible object for table member_info_euckr operations.
 	MemberInfoEuckr = MemberInfoEuckrDao{
-		M:     g.DB("taiwan").Model("member_info_euckr").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("member_info_euckr").Safe(),
+		DB:    g.DB("default"),
 		Table: "member_info_euckr",
 		Columns: memberInfoEuckrColumns{
 			MId:          "m_id",

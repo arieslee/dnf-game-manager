@@ -27,8 +27,8 @@ type memberLionessColumns struct {
 var (
 	// MemberLioness is globally public accessible object for table member_lioness operations.
 	MemberLioness = MemberLionessDao{
-		M:     g.DB("taiwan").Model("member_lioness").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("member_lioness").Safe(),
+		DB:    g.DB("default"),
 		Table: "member_lioness",
 		Columns: memberLionessColumns{
 			UserId: "user_id",

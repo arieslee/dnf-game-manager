@@ -171,7 +171,7 @@ function refreshToken() {
     let params = {
         refreshToken: tokenHelper.getRefreshToken() || '',
     };
-    let url = process.env.VUE_APP_ADMIN_BASE_API+process.env.VUE_APP_ADMIN_API_VERSION+'refresh-token';
+    let url = process.env.VUE_APP_BASE_API+process.env.VUE_APP_API_VERSION+'refresh-token';
     return axios.post(url, params);
 }
 

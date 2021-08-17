@@ -100,8 +100,8 @@ type bakDnfItemInfoColumns struct {
 var (
 	// BakDnfItemInfo is globally public accessible object for table bak_dnf_item_info operations.
 	BakDnfItemInfo = BakDnfItemInfoDao{
-		M:     g.DB("taiwan").Model("bak_dnf_item_info").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("bak_dnf_item_info").Safe(),
+		DB:    g.DB("default"),
 		Table: "bak_dnf_item_info",
 		Columns: bakDnfItemInfoColumns{
 			ItNo:                 "it_no",

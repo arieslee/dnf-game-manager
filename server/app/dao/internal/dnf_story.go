@@ -40,8 +40,8 @@ type dnfStoryColumns struct {
 var (
 	// DnfStory is globally public accessible object for table dnf_story operations.
 	DnfStory = DnfStoryDao{
-		M:     g.DB("taiwan").Model("dnf_story").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("dnf_story").Safe(),
+		DB:    g.DB("default"),
 		Table: "dnf_story",
 		Columns: dnfStoryColumns{
 			No:          "no",

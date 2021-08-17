@@ -38,8 +38,8 @@ type dnfEventLogColumns struct {
 var (
 	// DnfEventLog is globally public accessible object for table dnf_event_log operations.
 	DnfEventLog = DnfEventLogDao{
-		M:     g.DB("taiwan").Model("dnf_event_log").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("dnf_event_log").Safe(),
+		DB:    g.DB("default"),
 		Table: "dnf_event_log",
 		Columns: dnfEventLogColumns{
 			LogId:      "log_id",

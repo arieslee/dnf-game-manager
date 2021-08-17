@@ -27,8 +27,8 @@ type eventHinamatsuriCntColumns struct {
 var (
 	// EventHinamatsuriCnt is globally public accessible object for table event_hinamatsuri_cnt operations.
 	EventHinamatsuriCnt = EventHinamatsuriCntDao{
-		M:     g.DB("taiwan").Model("event_hinamatsuri_cnt").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("event_hinamatsuri_cnt").Safe(),
+		DB:    g.DB("default"),
 		Table: "event_hinamatsuri_cnt",
 		Columns: eventHinamatsuriCntColumns{
 			Cnt: "cnt",

@@ -32,8 +32,8 @@ type geoRejectColumns struct {
 var (
 	// GeoReject is globally public accessible object for table geo_reject operations.
 	GeoReject = GeoRejectDao{
-		M:     g.DB("taiwan").Model("geo_reject").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("geo_reject").Safe(),
+		DB:    g.DB("default"),
 		Table: "geo_reject",
 		Columns: geoRejectColumns{
 			RejIp:       "rej_ip",

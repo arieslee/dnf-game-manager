@@ -30,8 +30,8 @@ type eventPandoraEntry200905Columns struct {
 var (
 	// EventPandoraEntry200905 is globally public accessible object for table event_pandora_entry_200905 operations.
 	EventPandoraEntry200905 = EventPandoraEntry200905Dao{
-		M:     g.DB("taiwan").Model("event_pandora_entry_200905").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("event_pandora_entry_200905").Safe(),
+		DB:    g.DB("default"),
 		Table: "event_pandora_entry_200905",
 		Columns: eventPandoraEntry200905Columns{
 			MId:      "m_id",

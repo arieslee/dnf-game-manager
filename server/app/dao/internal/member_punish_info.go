@@ -35,8 +35,8 @@ type memberPunishInfoColumns struct {
 var (
 	// MemberPunishInfo is globally public accessible object for table member_punish_info operations.
 	MemberPunishInfo = MemberPunishInfoDao{
-		M:     g.DB("taiwan").Model("member_punish_info").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("member_punish_info").Safe(),
+		DB:    g.DB("default"),
 		Table: "member_punish_info",
 		Columns: memberPunishInfoColumns{
 			MId:         "m_id",

@@ -36,8 +36,8 @@ type dblabDbConnect130516Columns struct {
 var (
 	// DblabDbConnect130516 is globally public accessible object for table dblab_db_connect_130516 operations.
 	DblabDbConnect130516 = DblabDbConnect130516Dao{
-		M:     g.DB("taiwan").Model("dblab_db_connect_130516").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("dblab_db_connect_130516").Safe(),
+		DB:    g.DB("default"),
 		Table: "dblab_db_connect_130516",
 		Columns: dblabDbConnect130516Columns{
 			No:            "no",

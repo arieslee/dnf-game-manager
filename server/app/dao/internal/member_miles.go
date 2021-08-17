@@ -29,8 +29,8 @@ type memberMilesColumns struct {
 var (
 	// MemberMiles is globally public accessible object for table member_miles operations.
 	MemberMiles = MemberMilesDao{
-		M:     g.DB("taiwan").Model("member_miles").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("member_miles").Safe(),
+		DB:    g.DB("default"),
 		Table: "member_miles",
 		Columns: memberMilesColumns{
 			MId:        "m_id",

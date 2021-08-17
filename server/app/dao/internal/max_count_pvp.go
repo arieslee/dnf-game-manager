@@ -29,8 +29,8 @@ type maxCountPvpColumns struct {
 var (
 	// MaxCountPvp is globally public accessible object for table max_count_pvp operations.
 	MaxCountPvp = MaxCountPvpDao{
-		M:     g.DB("taiwan").Model("max_count_pvp").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("max_count_pvp").Safe(),
+		DB:    g.DB("default"),
 		Table: "max_count_pvp",
 		Columns: maxCountPvpColumns{
 			ServerInfo: "server_info",

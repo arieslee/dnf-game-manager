@@ -34,8 +34,8 @@ type eventNewmember0709EntryColumns struct {
 var (
 	// EventNewmember0709Entry is globally public accessible object for table event_newmember0709_entry operations.
 	EventNewmember0709Entry = EventNewmember0709EntryDao{
-		M:     g.DB("taiwan").Model("event_newmember0709_entry").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("event_newmember0709_entry").Safe(),
+		DB:    g.DB("default"),
 		Table: "event_newmember0709_entry",
 		Columns: eventNewmember0709EntryColumns{
 			MId:        "m_id",

@@ -31,8 +31,8 @@ type memberPremiumHistoryColumns struct {
 var (
 	// MemberPremiumHistory is globally public accessible object for table member_premium_history operations.
 	MemberPremiumHistory = MemberPremiumHistoryDao{
-		M:     g.DB("taiwan").Model("member_premium_history").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("member_premium_history").Safe(),
+		DB:    g.DB("default"),
 		Table: "member_premium_history",
 		Columns: memberPremiumHistoryColumns{
 			EventId:      "event_id",

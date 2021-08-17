@@ -29,8 +29,8 @@ type memberMouseSmsColumns struct {
 var (
 	// MemberMouseSms is globally public accessible object for table member_mouse_sms operations.
 	MemberMouseSms = MemberMouseSmsDao{
-		M:     g.DB("taiwan").Model("member_mouse_sms").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("member_mouse_sms").Safe(),
+		DB:    g.DB("default"),
 		Table: "member_mouse_sms",
 		Columns: memberMouseSmsColumns{
 			MId:     "m_id",

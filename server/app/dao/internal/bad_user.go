@@ -32,8 +32,8 @@ type badUserColumns struct {
 var (
 	// BadUser is globally public accessible object for table bad_user operations.
 	BadUser = BadUserDao{
-		M:     g.DB("taiwan").Model("bad_user").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("bad_user").Safe(),
+		DB:    g.DB("default"),
 		Table: "bad_user",
 		Columns: badUserColumns{
 			No:        "no",

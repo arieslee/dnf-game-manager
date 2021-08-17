@@ -29,8 +29,8 @@ type guildHalloffameHtmlColumns struct {
 var (
 	// GuildHalloffameHtml is globally public accessible object for table guild_halloffame_html operations.
 	GuildHalloffameHtml = GuildHalloffameHtmlDao{
-		M:     g.DB("taiwan").Model("guild_halloffame_html").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("guild_halloffame_html").Safe(),
+		DB:    g.DB("default"),
 		Table: "guild_halloffame_html",
 		Columns: guildHalloffameHtmlColumns{
 			FameId: "fame_id",

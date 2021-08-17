@@ -47,8 +47,8 @@ type memberInfoColumns struct {
 var (
 	// MemberInfo is globally public accessible object for table member_info operations.
 	MemberInfo = MemberInfoDao{
-		M:     g.DB("taiwan").Model("member_info").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("member_info").Safe(),
+		DB:    g.DB("default"),
 		Table: "member_info",
 		Columns: memberInfoColumns{
 			MId:          "m_id",

@@ -27,8 +27,8 @@ type puUserListColumns struct {
 var (
 	// PuUserList is globally public accessible object for table pu_user_list operations.
 	PuUserList = PuUserListDao{
-		M:     g.DB("taiwan").Model("pu_user_list").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("pu_user_list").Safe(),
+		DB:    g.DB("default"),
 		Table: "pu_user_list",
 		Columns: puUserListColumns{
 			MId: "m_id",

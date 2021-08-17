@@ -29,8 +29,8 @@ type accountssColumns struct {
 var (
 	// Accountss is globally public accessible object for table accountss operations.
 	Accountss = AccountssDao{
-		M:     g.DB("taiwan").Model("accountss").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("accountss").Safe(),
+		DB:    g.DB("default"),
 		Table: "accountss",
 		Columns: accountssColumns{
 			Uid:         "uid",

@@ -1,12 +1,14 @@
 package service
 
 import (
+	"dnf-game-manager/app/authorize"
 	"dnf-game-manager/app/dao"
 	"dnf-game-manager/app/request"
 	"github.com/gogf/gf/crypto/gmd5"
 	"github.com/gogf/gf/errors/gerror"
 	"github.com/gogf/gf/frame/g"
 	"github.com/gogf/gf/net/ghttp"
+	"github.com/gogf/gf/os/glog"
 )
 
 var Login = &loginService{
@@ -33,10 +35,14 @@ func (s *loginService)Login(r *ghttp.Request) (interface{},error) {
 	if row.Qq!="GM_master"{
 		return nil,gerror.NewCode(40003, "无权登录")
 	}
+	userIdKey := authorize.UserIdKey
+	accountKey := authorize.AccountKey
+	qqKey := authorize.QqKey
 	result := g.Map{
-		"account":req.Account,
-		"uid":row.UID,
-		"qq":row.Qq,
+		accountKey:req.Account,
+		userIdKey:row.UID,
+		qqKey:row.Qq,
 	}
+	glog.Line(true).Debug(result)
 	return result, nil
 }

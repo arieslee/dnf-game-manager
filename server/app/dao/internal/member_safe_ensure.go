@@ -34,8 +34,8 @@ type memberSafeEnsureColumns struct {
 var (
 	// MemberSafeEnsure is globally public accessible object for table member_safe_ensure operations.
 	MemberSafeEnsure = MemberSafeEnsureDao{
-		M:     g.DB("taiwan").Model("member_safe_ensure").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("member_safe_ensure").Safe(),
+		DB:    g.DB("default"),
 		Table: "member_safe_ensure",
 		Columns: memberSafeEnsureColumns{
 			MId:         "m_id",

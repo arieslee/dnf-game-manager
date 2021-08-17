@@ -34,8 +34,8 @@ type dnfPcroomColumns struct {
 var (
 	// DnfPcroom is globally public accessible object for table dnf_pcroom operations.
 	DnfPcroom = DnfPcroomDao{
-		M:     g.DB("taiwan").Model("dnf_pcroom").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("dnf_pcroom").Safe(),
+		DB:    g.DB("default"),
 		Table: "dnf_pcroom",
 		Columns: dnfPcroomColumns{
 			IpNo:      "ip_no",

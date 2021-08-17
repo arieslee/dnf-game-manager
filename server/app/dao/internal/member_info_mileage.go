@@ -47,8 +47,8 @@ type memberInfoMileageColumns struct {
 var (
 	// MemberInfoMileage is globally public accessible object for table member_info_mileage operations.
 	MemberInfoMileage = MemberInfoMileageDao{
-		M:     g.DB("taiwan").Model("member_info_mileage").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("member_info_mileage").Safe(),
+		DB:    g.DB("default"),
 		Table: "member_info_mileage",
 		Columns: memberInfoMileageColumns{
 			MId:          "m_id",

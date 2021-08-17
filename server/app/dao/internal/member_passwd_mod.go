@@ -30,8 +30,8 @@ type memberPasswdModColumns struct {
 var (
 	// MemberPasswdMod is globally public accessible object for table member_passwd_mod operations.
 	MemberPasswdMod = MemberPasswdModDao{
-		M:     g.DB("taiwan").Model("member_passwd_mod").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("member_passwd_mod").Safe(),
+		DB:    g.DB("default"),
 		Table: "member_passwd_mod",
 		Columns: memberPasswdModColumns{
 			MId:       "m_id",

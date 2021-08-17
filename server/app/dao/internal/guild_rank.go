@@ -37,8 +37,8 @@ type guildRankColumns struct {
 var (
 	// GuildRank is globally public accessible object for table guild_rank operations.
 	GuildRank = GuildRankDao{
-		M:     g.DB("taiwan").Model("guild_rank").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("guild_rank").Safe(),
+		DB:    g.DB("default"),
 		Table: "guild_rank",
 		Columns: guildRankColumns{
 			ServerId:       "server_id",

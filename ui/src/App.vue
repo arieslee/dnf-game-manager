@@ -28,7 +28,5 @@ export default {
 };
 </script>
 <style>
-body,.theme--light.v-application{
-    background: #f7f8fa!important;
-}
+@import "style/app.scss";
 </style>

@@ -42,8 +42,8 @@ type underAgeConsentColumns struct {
 var (
 	// UnderAgeConsent is globally public accessible object for table under_age_consent operations.
 	UnderAgeConsent = UnderAgeConsentDao{
-		M:     g.DB("taiwan").Model("under_age_consent").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("under_age_consent").Safe(),
+		DB:    g.DB("default"),
 		Table: "under_age_consent",
 		Columns: underAgeConsentColumns{
 			MId:               "m_id",

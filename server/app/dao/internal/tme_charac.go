@@ -64,8 +64,8 @@ type tmeCharacColumns struct {
 var (
 	// TmeCharac is globally public accessible object for table tme_charac operations.
 	TmeCharac = TmeCharacDao{
-		M:     g.DB("taiwan").Model("tme_charac").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("tme_charac").Safe(),
+		DB:    g.DB("default"),
 		Table: "tme_charac",
 		Columns: tmeCharacColumns{
 			MId:               "m_id",

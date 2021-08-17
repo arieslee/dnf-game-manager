@@ -31,8 +31,8 @@ type dnfGameinNoticeColumns struct {
 var (
 	// DnfGameinNotice is globally public accessible object for table dnf_gamein_notice operations.
 	DnfGameinNotice = DnfGameinNoticeDao{
-		M:     g.DB("taiwan").Model("dnf_gamein_notice").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("dnf_gamein_notice").Safe(),
+		DB:    g.DB("default"),
 		Table: "dnf_gamein_notice",
 		Columns: dnfGameinNoticeColumns{
 			No:       "no",

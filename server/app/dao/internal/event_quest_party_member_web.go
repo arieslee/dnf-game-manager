@@ -32,8 +32,8 @@ type eventQuestPartyMemberWebColumns struct {
 var (
 	// EventQuestPartyMemberWeb is globally public accessible object for table event_quest_party_member_web operations.
 	EventQuestPartyMemberWeb = EventQuestPartyMemberWebDao{
-		M:     g.DB("taiwan").Model("event_quest_party_member_web").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("event_quest_party_member_web").Safe(),
+		DB:    g.DB("default"),
 		Table: "event_quest_party_member_web",
 		Columns: eventQuestPartyMemberWebColumns{
 			MId:          "m_id",

@@ -30,8 +30,8 @@ type dnfRestrictInfoColumns struct {
 var (
 	// DnfRestrictInfo is globally public accessible object for table dnf_restrict_info operations.
 	DnfRestrictInfo = DnfRestrictInfoDao{
-		M:     g.DB("taiwan").Model("dnf_restrict_info").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("dnf_restrict_info").Safe(),
+		DB:    g.DB("default"),
 		Table: "dnf_restrict_info",
 		Columns: dnfRestrictInfoColumns{
 			Category:     "category",

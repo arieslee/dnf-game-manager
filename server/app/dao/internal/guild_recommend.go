@@ -33,8 +33,8 @@ type guildRecommendColumns struct {
 var (
 	// GuildRecommend is globally public accessible object for table guild_recommend operations.
 	GuildRecommend = GuildRecommendDao{
-		M:     g.DB("taiwan").Model("guild_recommend").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("guild_recommend").Safe(),
+		DB:    g.DB("default"),
 		Table: "guild_recommend",
 		Columns: guildRecommendColumns{
 			No:            "no",

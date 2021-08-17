@@ -28,8 +28,8 @@ type testColumns struct {
 var (
 	// Test is globally public accessible object for table test operations.
 	Test = TestDao{
-		M:     g.DB("taiwan").Model("test").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("test").Safe(),
+		DB:    g.DB("default"),
 		Table: "test",
 		Columns: testColumns{
 			A: "a",

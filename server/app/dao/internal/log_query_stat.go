@@ -31,8 +31,8 @@ type logQueryStatColumns struct {
 var (
 	// LogQueryStat is globally public accessible object for table log_query_stat operations.
 	LogQueryStat = LogQueryStatDao{
-		M:     g.DB("taiwan").Model("log_query_stat").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("log_query_stat").Safe(),
+		DB:    g.DB("default"),
 		Table: "log_query_stat",
 		Columns: logQueryStatColumns{
 			OccTime:      "occ_time",

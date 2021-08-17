@@ -50,8 +50,8 @@ type memberSecurityGradeColumns struct {
 var (
 	// MemberSecurityGrade is globally public accessible object for table member_security_grade operations.
 	MemberSecurityGrade = MemberSecurityGradeDao{
-		M:     g.DB("taiwan").Model("member_security_grade").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("member_security_grade").Safe(),
+		DB:    g.DB("default"),
 		Table: "member_security_grade",
 		Columns: memberSecurityGradeColumns{
 			MId:                      "m_id",

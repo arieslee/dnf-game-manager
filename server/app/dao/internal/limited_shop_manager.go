@@ -55,8 +55,8 @@ type limitedShopManagerColumns struct {
 var (
 	// LimitedShopManager is globally public accessible object for table limited_shop_manager operations.
 	LimitedShopManager = LimitedShopManagerDao{
-		M:     g.DB("taiwan").Model("limited_shop_manager").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("limited_shop_manager").Safe(),
+		DB:    g.DB("default"),
 		Table: "limited_shop_manager",
 		Columns: limitedShopManagerColumns{
 			No:                     "no",

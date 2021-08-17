@@ -28,8 +28,8 @@ type pswdQstionDirectColumns struct {
 var (
 	// PswdQstionDirect is globally public accessible object for table pswd_qstion_direct operations.
 	PswdQstionDirect = PswdQstionDirectDao{
-		M:     g.DB("taiwan").Model("pswd_qstion_direct").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("pswd_qstion_direct").Safe(),
+		DB:    g.DB("default"),
 		Table: "pswd_qstion_direct",
 		Columns: pswdQstionDirectColumns{
 			MId:   "m_id",

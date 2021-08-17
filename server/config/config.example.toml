@@ -1,28 +1,50 @@
+[app]
+    version="0.1.0"
+    isDevelop = true
+    logPath="./logs"
+    tmpPath="./tmps"
+    tokenSecret="abc123adm"
+    loginFailLimit=5 # 管理员登录失败次数后就禁止登录
+    loginFailLimitExpire=600 # 管理员登录失败后禁止登录的时间,600秒
+    tokenExpire=3600 # 一小时3600秒
+    refreshTokenExpire=604800 #一周604800秒
 # HTTP Server
 [server]
-	Address     = ":8199"
-	ServerRoot  = "public"
-	ServerAgent = "gf-app"
-	LogPath     = "/tmp/log/gf-app/server"
-
+    port     = "8383"
+    root  = "public"
+    agent = "DNF-game-manager"
+    logPath     = "./logs/server"
+    dumpRouterMap = false
+    accessLogEnabled = false
 # Logger.
 [logger]
-    Path        = "/tmp/log/gf-app"
+    Path        = "./logs/app"
     Level       = "all"
     Stdout      = true
 
-# Template.
-[viewer]
-    Path        = "template"
-    DefaultFile = "index.html"
-    Delimiters  =  ["{{", "}}"]
-
-# Database.
 [database]
-    link  = "mysql:root:12345678@tcp(127.0.0.1:3306)/test"
-    debug = true
+    [[database.default]]
+        host         = "127.0.0.1"
+        port         = "3306"
+        user         = "root"
+        pass         = "12345678"
+        name         = "d_taiwan"
+        type         = "mysql"
+        debug        = "true"
+        weight       = "100"
+        charset      = "utf8"
+        maxIdle      = "10"
+        maxOpen      = "100"
+        maxLifetime  = "30s"
     # Database logger.
     [database.logger]
-        Path   = "/tmp/log/gf-app/sql"
+        Path   = "./logs/sql"
         Level  = "all"
         Stdout = true
+
+[gfcli]
+    [[gfcli.gen.dao]]
+        link   = "mysql:root:12345678@tcp(127.0.0.1:3306)/d_taiwan"
+        # group  = "taiwan"
+        descriptionTag = true
+        noModelComment = true

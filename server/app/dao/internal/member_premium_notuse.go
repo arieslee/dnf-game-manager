@@ -32,8 +32,8 @@ type memberPremiumNotuseColumns struct {
 var (
 	// MemberPremiumNotuse is globally public accessible object for table member_premium_notuse operations.
 	MemberPremiumNotuse = MemberPremiumNotuseDao{
-		M:     g.DB("taiwan").Model("member_premium_notuse").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("member_premium_notuse").Safe(),
+		DB:    g.DB("default"),
 		Table: "member_premium_notuse",
 		Columns: memberPremiumNotuseColumns{
 			EventId:      "event_id",

@@ -30,8 +30,8 @@ type eventQuizquizStampColumns struct {
 var (
 	// EventQuizquizStamp is globally public accessible object for table event_quizquiz_stamp operations.
 	EventQuizquizStamp = EventQuizquizStampDao{
-		M:     g.DB("taiwan").Model("event_quizquiz_stamp").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("event_quizquiz_stamp").Safe(),
+		DB:    g.DB("default"),
 		Table: "event_quizquiz_stamp",
 		Columns: eventQuizquizStampColumns{
 			MId:     "m_id",

@@ -32,8 +32,8 @@ type dnfGameMessageColumns struct {
 var (
 	// DnfGameMessage is globally public accessible object for table dnf_game_message operations.
 	DnfGameMessage = DnfGameMessageDao{
-		M:     g.DB("taiwan").Model("dnf_game_message").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("dnf_game_message").Safe(),
+		DB:    g.DB("default"),
 		Table: "dnf_game_message",
 		Columns: dnfGameMessageColumns{
 			No:          "no",

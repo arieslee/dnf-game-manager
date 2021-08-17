@@ -28,8 +28,8 @@ type guildBodyColumns struct {
 var (
 	// GuildBody is globally public accessible object for table guild_body operations.
 	GuildBody = GuildBodyDao{
-		M:     g.DB("taiwan").Model("guild_body").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("guild_body").Safe(),
+		DB:    g.DB("default"),
 		Table: "guild_body",
 		Columns: guildBodyColumns{
 			Gno:  "gno",

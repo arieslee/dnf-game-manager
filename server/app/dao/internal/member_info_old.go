@@ -43,8 +43,8 @@ type memberInfoOldColumns struct {
 var (
 	// MemberInfoOld is globally public accessible object for table member_info_old operations.
 	MemberInfoOld = MemberInfoOldDao{
-		M:     g.DB("taiwan").Model("member_info_old").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("member_info_old").Safe(),
+		DB:    g.DB("default"),
 		Table: "member_info_old",
 		Columns: memberInfoOldColumns{
 			MId:          "m_id",

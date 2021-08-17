@@ -28,8 +28,8 @@ type memberAbnomalColumns struct {
 var (
 	// MemberAbnomal is globally public accessible object for table member_abnomal operations.
 	MemberAbnomal = MemberAbnomalDao{
-		M:     g.DB("taiwan").Model("member_abnomal").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("member_abnomal").Safe(),
+		DB:    g.DB("default"),
 		Table: "member_abnomal",
 		Columns: memberAbnomalColumns{
 			UserId:       "user_id",

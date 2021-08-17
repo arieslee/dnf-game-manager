@@ -37,8 +37,8 @@ type giftTicketEntryColumns struct {
 var (
 	// GiftTicketEntry is globally public accessible object for table gift_ticket_entry operations.
 	GiftTicketEntry = GiftTicketEntryDao{
-		M:     g.DB("taiwan").Model("gift_ticket_entry").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("gift_ticket_entry").Safe(),
+		DB:    g.DB("default"),
 		Table: "gift_ticket_entry",
 		Columns: giftTicketEntryColumns{
 			Id:         "id",

@@ -27,8 +27,8 @@ type slangListNameColumns struct {
 var (
 	// SlangListName is globally public accessible object for table slang_list_name operations.
 	SlangListName = SlangListNameDao{
-		M:     g.DB("taiwan").Model("slang_list_name").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("slang_list_name").Safe(),
+		DB:    g.DB("default"),
 		Table: "slang_list_name",
 		Columns: slangListNameColumns{
 			Slang: "slang",

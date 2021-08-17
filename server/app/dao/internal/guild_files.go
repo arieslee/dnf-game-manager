@@ -30,8 +30,8 @@ type guildFilesColumns struct {
 var (
 	// GuildFiles is globally public accessible object for table guild_files operations.
 	GuildFiles = GuildFilesDao{
-		M:     g.DB("taiwan").Model("guild_files").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("guild_files").Safe(),
+		DB:    g.DB("default"),
 		Table: "guild_files",
 		Columns: guildFilesColumns{
 			Gno:          "gno",

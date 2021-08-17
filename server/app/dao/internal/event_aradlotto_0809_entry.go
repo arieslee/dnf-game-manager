@@ -29,8 +29,8 @@ type eventAradlotto0809EntryColumns struct {
 var (
 	// EventAradlotto0809Entry is globally public accessible object for table event_aradlotto_0809_entry operations.
 	EventAradlotto0809Entry = EventAradlotto0809EntryDao{
-		M:     g.DB("taiwan").Model("event_aradlotto_0809_entry").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("event_aradlotto_0809_entry").Safe(),
+		DB:    g.DB("default"),
 		Table: "event_aradlotto_0809_entry",
 		Columns: eventAradlotto0809EntryColumns{
 			MId:      "m_id",

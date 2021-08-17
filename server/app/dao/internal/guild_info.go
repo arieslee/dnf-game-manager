@@ -52,8 +52,8 @@ type guildInfoColumns struct {
 var (
 	// GuildInfo is globally public accessible object for table guild_info operations.
 	GuildInfo = GuildInfoDao{
-		M:     g.DB("taiwan").Model("guild_info").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("guild_info").Safe(),
+		DB:    g.DB("default"),
 		Table: "guild_info",
 		Columns: guildInfoColumns{
 			GuildId:          "guild_id",

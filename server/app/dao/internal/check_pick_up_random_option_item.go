@@ -28,8 +28,8 @@ type checkPickUpRandomOptionItemColumns struct {
 var (
 	// CheckPickUpRandomOptionItem is globally public accessible object for table check_pick_up_random_option_item operations.
 	CheckPickUpRandomOptionItem = CheckPickUpRandomOptionItemDao{
-		M:     g.DB("taiwan").Model("check_pick_up_random_option_item").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("check_pick_up_random_option_item").Safe(),
+		DB:    g.DB("default"),
 		Table: "check_pick_up_random_option_item",
 		Columns: checkPickUpRandomOptionItemColumns{
 			MId:        "m_id",

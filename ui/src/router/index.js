@@ -4,7 +4,7 @@ import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
 import tokenHelper from "@/utils/token";
 
-
+import homeRoutes from "@/router/home";
 Vue.use(VueRouter);
 
 const need = require('./_import_' + process.env.NODE_ENV); // 获取组件的方法
@@ -16,9 +16,9 @@ VueRouter.prototype.push = function push(location) {
     return routerPush.call(this, location).catch(error => error)
 }
 const childRoutes = [];
-// if(homeRoutes && homeRoutes.length > 0){
-//     childRoutes.push(...homeRoutes);
-// }
+if(homeRoutes && homeRoutes.length > 0){
+    childRoutes.push(...homeRoutes);
+}
 
 const constantRoutes = [
     {

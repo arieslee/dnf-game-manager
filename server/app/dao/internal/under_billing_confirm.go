@@ -37,8 +37,8 @@ type underBillingConfirmColumns struct {
 var (
 	// UnderBillingConfirm is globally public accessible object for table under_billing_confirm operations.
 	UnderBillingConfirm = UnderBillingConfirmDao{
-		M:     g.DB("taiwan").Model("under_billing_confirm").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("under_billing_confirm").Safe(),
+		DB:    g.DB("default"),
 		Table: "under_billing_confirm",
 		Columns: underBillingConfirmColumns{
 			MId:               "m_id",

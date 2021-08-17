@@ -1,10 +1,12 @@
 package router
 
 import (
+	"dnf-game-manager/app/api"
 	"dnf-game-manager/app/middleware"
 	"dnf-game-manager/app/middleware/auth"
 	"fmt"
 	"github.com/gogf/gf/frame/g"
+	"github.com/gogf/gf/net/ghttp"
 	"github.com/gogf/gf/util/gconv"
 )
 
@@ -20,6 +22,14 @@ func Build() {
 	})
 	s.Use(middleware.CORS)
 	s.BindHandler("POST:/v1/login", auth.JWTMiddleware.LoginHandler)
+	// 刷新TOKEN
+	s.BindHandler("POST:/v1/refresh-token", func(r *ghttp.Request) {
+		auth.JWTMiddleware.RefreshHandler(r)
+	})
+	s.Group("/v1", func(g *ghttp.RouterGroup) {
+		g.Middleware(middleware.Auth)
+		g.GET("role", api.Account.RoleListHandler)
+	})
 	port := g.Cfg().GetInt("server.port")
 	s.SetPort(port)
 	fmt.Println("backend http 服务启动...127.0.0.1:" + gconv.String(port))

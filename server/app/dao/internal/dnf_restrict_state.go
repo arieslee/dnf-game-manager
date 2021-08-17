@@ -32,8 +32,8 @@ type dnfRestrictStateColumns struct {
 var (
 	// DnfRestrictState is globally public accessible object for table dnf_restrict_state operations.
 	DnfRestrictState = DnfRestrictStateDao{
-		M:     g.DB("taiwan").Model("dnf_restrict_state").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("dnf_restrict_state").Safe(),
+		DB:    g.DB("default"),
 		Table: "dnf_restrict_state",
 		Columns: dnfRestrictStateColumns{
 			ServerGroup:   "server_group",

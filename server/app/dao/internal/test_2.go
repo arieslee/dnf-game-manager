@@ -27,8 +27,8 @@ type test2Columns struct {
 var (
 	// Test2 is globally public accessible object for table test2 operations.
 	Test2 = Test2Dao{
-		M:     g.DB("taiwan").Model("test2").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("test2").Safe(),
+		DB:    g.DB("default"),
 		Table: "test2",
 		Columns: test2Columns{
 			A: "a",

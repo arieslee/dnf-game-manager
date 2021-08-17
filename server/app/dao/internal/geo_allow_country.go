@@ -29,8 +29,8 @@ type geoAllowCountryColumns struct {
 var (
 	// GeoAllowCountry is globally public accessible object for table geo_allow_country operations.
 	GeoAllowCountry = GeoAllowCountryDao{
-		M:     g.DB("taiwan").Model("geo_allow_country").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("geo_allow_country").Safe(),
+		DB:    g.DB("default"),
 		Table: "geo_allow_country",
 		Columns: geoAllowCountryColumns{
 			ServerGroup: "server_group",

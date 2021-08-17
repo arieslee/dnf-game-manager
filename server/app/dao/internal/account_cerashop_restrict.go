@@ -32,8 +32,8 @@ type accountCerashopRestrictColumns struct {
 var (
 	// AccountCerashopRestrict is globally public accessible object for table account_cerashop_restrict operations.
 	AccountCerashopRestrict = AccountCerashopRestrictDao{
-		M:     g.DB("taiwan").Model("account_cerashop_restrict").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("account_cerashop_restrict").Safe(),
+		DB:    g.DB("default"),
 		Table: "account_cerashop_restrict",
 		Columns: accountCerashopRestrictColumns{
 			MId:            "m_id",

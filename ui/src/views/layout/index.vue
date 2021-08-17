@@ -1,6 +1,24 @@
 <template>
     <v-app>
-        <v-app-bar color="primary" app dark>
+        <v-app-bar color="grey darken-3" app dark>
+            <v-menu
+                bottom
+                left>
+                <template v-slot:activator="{ on, attrs }">
+                    <v-btn dark icon v-bind="attrs" v-on="on">
+                        <v-icon>mdi-menu</v-icon>
+                    </v-btn>
+                </template>
+
+                <v-list>
+                    <v-list-item v-for="(item,idx) in menus" :key="'menu_'+idx">
+                        <v-list-item-title @click="menuClick(item)">
+                            <i v-if="item.icon" :class="item.icon"></i>
+                             {{item.label}}
+                        </v-list-item-title>
+                    </v-list-item>
+                </v-list>
+            </v-menu>
             <v-toolbar-title>{{pageTitle}}</v-toolbar-title>
             <v-spacer></v-spacer>
             <span class="now-time">{{nowTime}}</span>
@@ -18,7 +36,7 @@
                         <v-avatar
                             color="white"
                             size="36">
-                            <span class="primary--text">{{ cutNameToAvatar(realName) }}</span>
+                            <span class="primary--text">{{ cutNameToAvatar(account) }}</span>
                         </v-avatar>
                     </v-btn>
                 </template>
@@ -26,12 +44,16 @@
                     <v-list-item-content class="justify-center">
                         <div class="mx-auto text-center">
                             <v-avatar color="primary" size="36">
-                                <span class="white--text">{{ cutNameToAvatar(realName) }}</span>
+                                <span class="white--text">{{ cutNameToAvatar(account) }}</span>
                             </v-avatar>
-                            <h3 class="pad-ver-mini">{{ realName }}</h3>
+                            <h3 class="pad-ver-mini">{{ account }}</h3>
                             <p class="caption mt-1">
                                 {{ account }}
                             </p>
+                            <v-divider class="my-3"></v-divider>
+                            <v-btn @click="profile" depressed rounded text>
+                                个人资料
+                            </v-btn>
                             <v-divider class="my-3"></v-divider>
                             <v-btn @click="logout" depressed rounded text>
                                 退出登录
@@ -51,22 +73,25 @@
 </template>
 <script>
 import tokenHelper from "@/utils/token";
+import {MENU} from "@/config/menu";
+
 export default {
     data(){
         return {
             nowTime: '',
             homeUrl: '/',
+            menus:MENU,
         }
     },
     computed:{
         key() {
             return this.$route.fullPath;
         },
+        qq(){
+            return this.$store.getters.qq;
+        },
         account(){
             return this.$store.getters.account;
-        },
-        realName(){
-            return this.$store.getters.realName;
         },
         pageTitle(){
             return process.env.VUE_APP_TITLE;
@@ -80,8 +105,25 @@ export default {
         goHome(){
             this.$router.push(this.homeUrl);
         },
+        menuClick(item){
+            if (typeof item==='string'){
+                this.$router.push(path);
+            }else{
+                if(item.action){
+                    if(typeof item.action === 'function'){
+                        item.action();
+                    }else if(typeof item.action === 'string'){
+                        this.$router.push(item.action);
+                    }else{
+                        this.$store.dispatch('message/error', '菜单链接无效');
+                    }
+                }else{
+                    this.$store.dispatch('message/error', '菜单链接无效');
+                }
+            }
+        },
         getLocalUserInfo(){
-            if(!this.account || !this.realName){
+            if(!this.account || !this.qq){
                 this.$store.dispatch('auth/loadUserInfo');
             }
         },
@@ -93,14 +135,19 @@ export default {
                 this.$router.push('/login');
             }
         },
+        profile(){
+            this.$router.push({
+                path:'/profile',
+            });
+        },
         cutNameToAvatar(name = ''){
-            name = '还';
+            if (!name) return ''
             let len = 1;
-            const reg = /[\u4E00-\u9FA5]+/;
-            const result = name.match(reg) || [];
-            const str = result[0] || '';
-            if (!str[len]) return str;
-            return str.substr(str.length - len, len);
+            const reg = /[\u4E00-\u9FA5]+/
+            const result = name.match(reg) || []
+            const str = result[0] || ''
+            if (!str[len]) return str
+            return str.substr(str.length - len, len)
         },
         timeFormat(timeStamp) {
             let year = new Date(timeStamp).getFullYear();

@@ -30,8 +30,8 @@ type passwdModEntryColumns struct {
 var (
 	// PasswdModEntry is globally public accessible object for table passwd_mod_entry operations.
 	PasswdModEntry = PasswdModEntryDao{
-		M:     g.DB("taiwan").Model("passwd_mod_entry").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("passwd_mod_entry").Safe(),
+		DB:    g.DB("default"),
 		Table: "passwd_mod_entry",
 		Columns: passwdModEntryColumns{
 			MId:       "m_id",

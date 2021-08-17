@@ -40,8 +40,8 @@ type newsBbsColumns struct {
 var (
 	// NewsBbs is globally public accessible object for table news_bbs operations.
 	NewsBbs = NewsBbsDao{
-		M:     g.DB("taiwan").Model("news_bbs").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("news_bbs").Safe(),
+		DB:    g.DB("default"),
 		Table: "news_bbs",
 		Columns: newsBbsColumns{
 			BbsCode:  "bbs_code",

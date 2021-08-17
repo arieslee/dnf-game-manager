@@ -31,8 +31,8 @@ type limitCreateCharacterIpColumns struct {
 var (
 	// LimitCreateCharacterIp is globally public accessible object for table limit_create_character_ip operations.
 	LimitCreateCharacterIp = LimitCreateCharacterIpDao{
-		M:     g.DB("taiwan").Model("limit_create_character_ip").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("limit_create_character_ip").Safe(),
+		DB:    g.DB("default"),
 		Table: "limit_create_character_ip",
 		Columns: limitCreateCharacterIpColumns{
 			Ip:             "ip",

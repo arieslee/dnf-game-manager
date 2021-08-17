@@ -28,8 +28,8 @@ type eventGoldcardInfoColumns struct {
 var (
 	// EventGoldcardInfo is globally public accessible object for table event_goldcard_info operations.
 	EventGoldcardInfo = EventGoldcardInfoDao{
-		M:     g.DB("taiwan").Model("event_goldcard_info").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("event_goldcard_info").Safe(),
+		DB:    g.DB("default"),
 		Table: "event_goldcard_info",
 		Columns: eventGoldcardInfoColumns{
 			MId:    "m_id",

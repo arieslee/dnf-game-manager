@@ -32,8 +32,8 @@ type dnfEventInfoColumns struct {
 var (
 	// DnfEventInfo is globally public accessible object for table dnf_event_info operations.
 	DnfEventInfo = DnfEventInfoDao{
-		M:     g.DB("taiwan").Model("dnf_event_info").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("dnf_event_info").Safe(),
+		DB:    g.DB("default"),
 		Table: "dnf_event_info",
 		Columns: dnfEventInfoColumns{
 			EventId:      "event_id",

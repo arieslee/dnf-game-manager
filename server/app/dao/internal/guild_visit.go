@@ -30,8 +30,8 @@ type guildVisitColumns struct {
 var (
 	// GuildVisit is globally public accessible object for table guild_visit operations.
 	GuildVisit = GuildVisitDao{
-		M:     g.DB("taiwan").Model("guild_visit").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("guild_visit").Safe(),
+		DB:    g.DB("default"),
 		Table: "guild_visit",
 		Columns: guildVisitColumns{
 			GuildId:    "guild_id",

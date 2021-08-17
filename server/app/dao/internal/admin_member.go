@@ -43,8 +43,8 @@ type adminMemberColumns struct {
 var (
 	// AdminMember is globally public accessible object for table admin_member operations.
 	AdminMember = AdminMemberDao{
-		M:     g.DB("taiwan").Model("admin_member").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("admin_member").Safe(),
+		DB:    g.DB("default"),
 		Table: "admin_member",
 		Columns: adminMemberColumns{
 			No:          "no",

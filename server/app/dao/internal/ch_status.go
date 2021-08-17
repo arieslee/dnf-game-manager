@@ -28,8 +28,8 @@ type chStatusColumns struct {
 var (
 	// ChStatus is globally public accessible object for table ch_status operations.
 	ChStatus = ChStatusDao{
-		M:     g.DB("taiwan").Model("ch_status").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("ch_status").Safe(),
+		DB:    g.DB("default"),
 		Table: "ch_status",
 		Columns: chStatusColumns{
 			GcGroup:  "gc_group",

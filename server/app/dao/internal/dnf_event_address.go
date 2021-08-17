@@ -32,8 +32,8 @@ type dnfEventAddressColumns struct {
 var (
 	// DnfEventAddress is globally public accessible object for table dnf_event_address operations.
 	DnfEventAddress = DnfEventAddressDao{
-		M:     g.DB("taiwan").Model("dnf_event_address").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("dnf_event_address").Safe(),
+		DB:    g.DB("default"),
 		Table: "dnf_event_address",
 		Columns: dnfEventAddressColumns{
 			EventId: "event_id",

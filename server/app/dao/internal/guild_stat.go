@@ -35,8 +35,8 @@ type guildStatColumns struct {
 var (
 	// GuildStat is globally public accessible object for table guild_stat operations.
 	GuildStat = GuildStatDao{
-		M:     g.DB("taiwan").Model("guild_stat").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("guild_stat").Safe(),
+		DB:    g.DB("default"),
 		Table: "guild_stat",
 		Columns: guildStatColumns{
 			OccDate:      "occ_date",

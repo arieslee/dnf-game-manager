@@ -46,8 +46,8 @@ type memberInfoUtf8Columns struct {
 var (
 	// MemberInfoUtf8 is globally public accessible object for table member_info_utf8 operations.
 	MemberInfoUtf8 = MemberInfoUtf8Dao{
-		M:     g.DB("taiwan").Model("member_info_utf8").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("member_info_utf8").Safe(),
+		DB:    g.DB("default"),
 		Table: "member_info_utf8",
 		Columns: memberInfoUtf8Columns{
 			MId:          "m_id",

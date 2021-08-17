@@ -28,8 +28,8 @@ type gmManifestNotuseColumns struct {
 var (
 	// GmManifestNotuse is globally public accessible object for table gm_manifest_notuse operations.
 	GmManifestNotuse = GmManifestNotuseDao{
-		M:     g.DB("taiwan").Model("gm_manifest_notuse").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("gm_manifest_notuse").Safe(),
+		DB:    g.DB("default"),
 		Table: "gm_manifest_notuse",
 		Columns: gmManifestNotuseColumns{
 			MId:   "m_id",

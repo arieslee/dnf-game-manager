@@ -32,8 +32,8 @@ type eventGoldcardEntry2Columns struct {
 var (
 	// EventGoldcardEntry2 is globally public accessible object for table event_goldcard_entry2 operations.
 	EventGoldcardEntry2 = EventGoldcardEntry2Dao{
-		M:     g.DB("taiwan").Model("event_goldcard_entry2").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("event_goldcard_entry2").Safe(),
+		DB:    g.DB("default"),
 		Table: "event_goldcard_entry2",
 		Columns: eventGoldcardEntry2Columns{
 			OccDate:   "occ_date",

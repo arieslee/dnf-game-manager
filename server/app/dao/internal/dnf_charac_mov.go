@@ -33,8 +33,8 @@ type dnfCharacMovColumns struct {
 var (
 	// DnfCharacMov is globally public accessible object for table dnf_charac_mov operations.
 	DnfCharacMov = DnfCharacMovDao{
-		M:     g.DB("taiwan").Model("dnf_charac_mov").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("dnf_charac_mov").Safe(),
+		DB:    g.DB("default"),
 		Table: "dnf_charac_mov",
 		Columns: dnfCharacMovColumns{
 			Id:           "id",

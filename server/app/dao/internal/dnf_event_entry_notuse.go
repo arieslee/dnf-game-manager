@@ -32,8 +32,8 @@ type dnfEventEntryNotuseColumns struct {
 var (
 	// DnfEventEntryNotuse is globally public accessible object for table dnf_event_entry_notuse operations.
 	DnfEventEntryNotuse = DnfEventEntryNotuseDao{
-		M:     g.DB("taiwan").Model("dnf_event_entry_notuse").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("dnf_event_entry_notuse").Safe(),
+		DB:    g.DB("default"),
 		Table: "dnf_event_entry_notuse",
 		Columns: dnfEventEntryNotuseColumns{
 			EventId:    "event_id",

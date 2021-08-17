@@ -31,8 +31,8 @@ type guildEventColumns struct {
 var (
 	// GuildEvent is globally public accessible object for table guild_event operations.
 	GuildEvent = GuildEventDao{
-		M:     g.DB("taiwan").Model("guild_event").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("guild_event").Safe(),
+		DB:    g.DB("default"),
 		Table: "guild_event",
 		Columns: guildEventColumns{
 			Gno:     "gno",

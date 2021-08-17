@@ -39,8 +39,8 @@ type userBanColumns struct {
 var (
 	// UserBan is globally public accessible object for table user_ban operations.
 	UserBan = UserBanDao{
-		M:     g.DB("taiwan").Model("user_ban").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("user_ban").Safe(),
+		DB:    g.DB("default"),
 		Table: "user_ban",
 		Columns: userBanColumns{
 			No:           "no",

@@ -28,8 +28,8 @@ type bakMId201304263Columns struct {
 var (
 	// BakMId201304263 is globally public accessible object for table bak_m_id_20130426_3 operations.
 	BakMId201304263 = BakMId201304263Dao{
-		M:     g.DB("taiwan").Model("bak_m_id_20130426_3").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("bak_m_id_20130426_3").Safe(),
+		DB:    g.DB("default"),
 		Table: "bak_m_id_20130426_3",
 		Columns: bakMId201304263Columns{
 			UserId:  "user_id",

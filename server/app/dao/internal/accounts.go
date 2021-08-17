@@ -33,8 +33,8 @@ type accountsColumns struct {
 var (
 	// Accounts is globally public accessible object for table accounts operations.
 	Accounts = AccountsDao{
-		M:     g.DB("taiwan").Model("accounts").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("accounts").Safe(),
+		DB:    g.DB("default"),
 		Table: "accounts",
 		Columns: accountsColumns{
 			UID:         "UID",

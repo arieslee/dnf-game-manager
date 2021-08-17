@@ -29,8 +29,8 @@ type maxCountColumns struct {
 var (
 	// MaxCount is globally public accessible object for table max_count operations.
 	MaxCount = MaxCountDao{
-		M:     g.DB("taiwan").Model("max_count").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("max_count").Safe(),
+		DB:    g.DB("default"),
 		Table: "max_count",
 		Columns: maxCountColumns{
 			ServerInfo: "server_info",

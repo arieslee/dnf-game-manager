@@ -33,8 +33,8 @@ type eventCharacMov1ThColumns struct {
 var (
 	// EventCharacMov1Th is globally public accessible object for table event_charac_mov_1th operations.
 	EventCharacMov1Th = EventCharacMov1ThDao{
-		M:     g.DB("taiwan").Model("event_charac_mov_1th").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("event_charac_mov_1th").Safe(),
+		DB:    g.DB("default"),
 		Table: "event_charac_mov_1th",
 		Columns: eventCharacMov1ThColumns{
 			Id:           "id",

@@ -49,8 +49,8 @@ type guildMemberColumns struct {
 var (
 	// GuildMember is globally public accessible object for table guild_member operations.
 	GuildMember = GuildMemberDao{
-		M:     g.DB("taiwan").Model("guild_member").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("guild_member").Safe(),
+		DB:    g.DB("default"),
 		Table: "guild_member",
 		Columns: guildMemberColumns{
 			GuildId:         "guild_id",

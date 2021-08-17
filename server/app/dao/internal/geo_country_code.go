@@ -30,8 +30,8 @@ type geoCountryCodeColumns struct {
 var (
 	// GeoCountryCode is globally public accessible object for table geo_country_code operations.
 	GeoCountryCode = GeoCountryCodeDao{
-		M:     g.DB("taiwan").Model("geo_country_code").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("geo_country_code").Safe(),
+		DB:    g.DB("default"),
 		Table: "geo_country_code",
 		Columns: geoCountryCodeColumns{
 			CodeNo:        "code_no",

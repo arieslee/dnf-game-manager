@@ -70,7 +70,8 @@ export default{
             .then(() => {
                 this.loginLoading = false;
                 this.$store.dispatch('message/success','登录成功');
-                this.$router.replace(process.env.VUE_APP_INDEX_PATH);
+                console.log('process.env.VUE_APP_INDEX_PATH',process.env.VUE_APP_HOME_PATH);
+                this.$router.push(process.env.VUE_APP_HOME_PATH);
             })
             .catch((err) => {
                 this.loginLoading = false;

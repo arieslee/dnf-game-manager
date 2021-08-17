@@ -33,8 +33,8 @@ type memberHandicapColumns struct {
 var (
 	// MemberHandicap is globally public accessible object for table member_handicap operations.
 	MemberHandicap = MemberHandicapDao{
-		M:     g.DB("taiwan").Model("member_handicap").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("member_handicap").Safe(),
+		DB:    g.DB("default"),
 		Table: "member_handicap",
 		Columns: memberHandicapColumns{
 			EventId:       "event_id",

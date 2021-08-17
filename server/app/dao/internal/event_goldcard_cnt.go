@@ -29,8 +29,8 @@ type eventGoldcardCntColumns struct {
 var (
 	// EventGoldcardCnt is globally public accessible object for table event_goldcard_cnt operations.
 	EventGoldcardCnt = EventGoldcardCntDao{
-		M:     g.DB("taiwan").Model("event_goldcard_cnt").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("event_goldcard_cnt").Safe(),
+		DB:    g.DB("default"),
 		Table: "event_goldcard_cnt",
 		Columns: eventGoldcardCntColumns{
 			ItemNo:  "item_no",

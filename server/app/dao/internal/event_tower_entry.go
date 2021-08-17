@@ -37,8 +37,8 @@ type eventTowerEntryColumns struct {
 var (
 	// EventTowerEntry is globally public accessible object for table event_tower_entry operations.
 	EventTowerEntry = EventTowerEntryDao{
-		M:     g.DB("taiwan").Model("event_tower_entry").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("event_tower_entry").Safe(),
+		DB:    g.DB("default"),
 		Table: "event_tower_entry",
 		Columns: eventTowerEntryColumns{
 			MId:        "m_id",

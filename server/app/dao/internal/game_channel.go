@@ -35,8 +35,8 @@ type gameChannelColumns struct {
 var (
 	// GameChannel is globally public accessible object for table game_channel operations.
 	GameChannel = GameChannelDao{
-		M:     g.DB("taiwan").Model("game_channel").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("game_channel").Safe(),
+		DB:    g.DB("default"),
 		Table: "game_channel",
 		Columns: gameChannelColumns{
 			GcNo:          "gc_no",

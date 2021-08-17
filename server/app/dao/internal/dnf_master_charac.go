@@ -33,8 +33,8 @@ type dnfMasterCharacColumns struct {
 var (
 	// DnfMasterCharac is globally public accessible object for table dnf_master_charac operations.
 	DnfMasterCharac = DnfMasterCharacDao{
-		M:     g.DB("taiwan").Model("dnf_master_charac").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("dnf_master_charac").Safe(),
+		DB:    g.DB("default"),
 		Table: "dnf_master_charac",
 		Columns: dnfMasterCharacColumns{
 			MId:        "m_id",

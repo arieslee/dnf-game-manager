@@ -36,8 +36,8 @@ type memberSafeEnsureHistoryColumns struct {
 var (
 	// MemberSafeEnsureHistory is globally public accessible object for table member_safe_ensure_history operations.
 	MemberSafeEnsureHistory = MemberSafeEnsureHistoryDao{
-		M:     g.DB("taiwan").Model("member_safe_ensure_history").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("member_safe_ensure_history").Safe(),
+		DB:    g.DB("default"),
 		Table: "member_safe_ensure_history",
 		Columns: memberSafeEnsureHistoryColumns{
 			ModFlag:     "mod_flag",

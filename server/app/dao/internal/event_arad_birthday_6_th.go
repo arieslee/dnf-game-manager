@@ -28,8 +28,8 @@ type eventAradBirthday6ThColumns struct {
 var (
 	// EventAradBirthday6Th is globally public accessible object for table event_arad_birthday_6th operations.
 	EventAradBirthday6Th = EventAradBirthday6ThDao{
-		M:     g.DB("taiwan").Model("event_arad_birthday_6th").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("event_arad_birthday_6th").Safe(),
+		DB:    g.DB("default"),
 		Table: "event_arad_birthday_6th",
 		Columns: eventAradBirthday6ThColumns{
 			Server: "server",

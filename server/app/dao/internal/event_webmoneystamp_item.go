@@ -32,8 +32,8 @@ type eventWebmoneystampItemColumns struct {
 var (
 	// EventWebmoneystampItem is globally public accessible object for table event_webmoneystamp_item operations.
 	EventWebmoneystampItem = EventWebmoneystampItemDao{
-		M:     g.DB("taiwan").Model("event_webmoneystamp_item").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("event_webmoneystamp_item").Safe(),
+		DB:    g.DB("default"),
 		Table: "event_webmoneystamp_item",
 		Columns: eventWebmoneystampItemColumns{
 			MId:       "m_id",

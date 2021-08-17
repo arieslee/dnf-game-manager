@@ -20,7 +20,7 @@ type AccountCerashopRestrict struct {
 
 // Accounts is the golang structure for table accounts.
 type Accounts struct {
-	UID         int    `orm:"UID,primary" json:"uid"`         //
+	UID         int    `orm:"UID,primary" json:"UID"`         //
 	Accountname string `orm:"accountname" json:"accountname"` //
 	Password    string `orm:"password"    json:"password"`    //
 	Qq          string `orm:"qq"          json:"qq"`          //

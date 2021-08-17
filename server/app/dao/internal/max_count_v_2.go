@@ -32,8 +32,8 @@ type maxCountV2Columns struct {
 var (
 	// MaxCountV2 is globally public accessible object for table max_count_v2 operations.
 	MaxCountV2 = MaxCountV2Dao{
-		M:     g.DB("taiwan").Model("max_count_v2").Safe(),
-		DB:    g.DB("taiwan"),
+		M:     g.DB("default").Model("max_count_v2").Safe(),
+		DB:    g.DB("default"),
 		Table: "max_count_v2",
 		Columns: maxCountV2Columns{
 			ServerInfo:               "server_info",
