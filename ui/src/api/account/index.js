@@ -1,5 +1,5 @@
 import {get,post} from '@/utils/request';
 
 export const getRoleList = (params)=>{
-    return get("/role");
+    return get("/role",{params:params});
 }

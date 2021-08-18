@@ -108,9 +108,9 @@ func LoginResponse(r *ghttp.Request, code int, token string, expire time.Time, c
 		"expire_unix":               expire.Unix(),
 		"avatar_url":                claims["avatar_url"],
 		userIdKey:                   claims[userIdKey],
-		accountKey:               claims[accountKey],
-		"name":                      claims["real_name"],
-		qqKey:                   claims[qqKey],
+		accountKey:                  claims[accountKey],
+		"name":                      claims[accountKey],
+		qqKey:                       claims[qqKey],
 	})
 	r.ExitAll()
 }

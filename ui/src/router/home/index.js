@@ -29,6 +29,16 @@ const homeRoutes = [
             title: '角色',
         }
     },
+    {
+        path: 'mail',
+        acl: 'mail',
+        name: 'mail',
+        parent:'',
+        component: () => import('@/views/mail/index.vue'),
+        meta: {
+            title: '邮件',
+        }
+    },
 ];
 
 export default homeRoutes;

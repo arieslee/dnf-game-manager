@@ -29,6 +29,7 @@ func Build() {
 	s.Group("/v1", func(g *ghttp.RouterGroup) {
 		g.Middleware(middleware.Auth)
 		g.GET("role", api.Account.RoleListHandler)
+		g.GET("item", api.Item.ListHandler)
 	})
 	port := g.Cfg().GetInt("server.port")
 	s.SetPort(port)

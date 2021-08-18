@@ -36,9 +36,9 @@ const actions = {
             login(params).then((resp) => {
                 tokenHelper.set(resp, function (res) {
                     commit('SET_USER_INFO', res);
-                    commit('SET_UID', res['uid']);
-                    commit('SET_ACCOUNT', res['account']);
-                    commit('SET_QQ', res['qq']);
+                    commit('SET_UID', res['token_uid']);
+                    commit('SET_ACCOUNT', res['token_account']);
+                    commit('SET_QQ', res['token_qq']);
                     resolve(res);
                 });
             }).catch((err) => {

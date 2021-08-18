@@ -8,7 +8,6 @@ import (
 	"github.com/gogf/gf/errors/gerror"
 	"github.com/gogf/gf/frame/g"
 	"github.com/gogf/gf/net/ghttp"
-	"github.com/gogf/gf/os/glog"
 )
 
 var Login = &loginService{
@@ -43,6 +42,5 @@ func (s *loginService)Login(r *ghttp.Request) (interface{},error) {
 		userIdKey:row.UID,
 		qqKey:row.Qq,
 	}
-	glog.Line(true).Debug(result)
 	return result, nil
 }
