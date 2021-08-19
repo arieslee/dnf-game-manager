@@ -30,6 +30,7 @@ func Build() {
 		g.Middleware(middleware.Auth)
 		g.GET("role", api.Account.RoleListHandler)
 		g.GET("item", api.Item.ListHandler)
+		g.POST("mail", api.Mail.SendHandler)
 	})
 	port := g.Cfg().GetInt("server.port")
 	s.SetPort(port)
