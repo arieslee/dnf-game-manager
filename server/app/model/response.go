@@ -31,3 +31,9 @@ type ItemListResult struct {
 	DataList []*ItemDetail `json:"data_list"` // 列表
 	BaseListResult
 }
+
+// AccountListResult 列表结果
+type AccountListResult struct {
+	DataList []*Accounts `json:"data_list"` // 列表
+	BaseListResult
+}

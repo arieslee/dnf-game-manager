@@ -28,6 +28,8 @@ func Build() {
 	})
 	s.Group("/v1", func(g *ghttp.RouterGroup) {
 		g.Middleware(middleware.Auth)
+		g.GET("account", api.Account.ListHandler)
+		g.POST("account/delete", api.Account.AccountDeleteHandler)
 		g.GET("role", api.Account.RoleListHandler)
 		g.GET("item", api.Item.ListHandler)
 		g.POST("mail", api.Mail.SendHandler)

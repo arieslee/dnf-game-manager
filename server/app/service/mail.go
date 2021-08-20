@@ -23,12 +23,13 @@ func (s *mailService) Send(r *ghttp.Request) error {
 	}
 	schema := "taiwan_cain_2nd"
 	table := "letter"
-	data := g.Map{
-		"charac_no":        req.Mid,
-		"send_charac_name": "Game Master",
-		"letter_text":      "",
-	}
 	dateTime := gtime.Now().Format("Y-m-d H:i:s")
+	data := g.Map{
+		"charac_no":        req.CharacNo,
+		"send_charac_name": "Game Master",
+		"letter_text":      req.LetterText,
+		"reg_date":         dateTime,
+	}
 	db := g.DB().Schema(schema)
 	res, err := db.Model(table).Data(data).Insert()
 	if err != nil {
@@ -38,7 +39,7 @@ func (s *mailService) Send(r *ghttp.Request) error {
 	postalData := g.Map{
 		"occ_time":          dateTime,
 		"send_charac_name":  data["send_charac_name"],
-		"receive_charac_no": req.Mid,
+		"receive_charac_no": req.CharacNo,
 		"item_id":           req.ItemId,
 		"add_info":          req.Num,
 		"upgrade":           req.Strong,

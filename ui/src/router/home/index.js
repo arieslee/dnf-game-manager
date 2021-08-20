@@ -30,6 +30,16 @@ const homeRoutes = [
         }
     },
     {
+        path: 'account',
+        acl: 'account',
+        name: 'account',
+        parent:'',
+        component: () => import('@/views/account/index.vue'),
+        meta: {
+            title: '账号',
+        }
+    },
+    {
         path: 'mail',
         acl: 'mail',
         name: 'mail',
