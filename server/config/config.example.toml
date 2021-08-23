@@ -32,10 +32,13 @@
         type         = "mysql"
         debug        = "true"
         weight       = "100"
-        charset      = "utf8"
+        charset      = "latin1"
         maxIdle      = "10"
         maxOpen      = "100"
         maxLifetime  = "30s"
+    [[database.item]]
+        debug        = "true"
+        link = "sqlite:/Volumes/HDD/workshop/go/project/github.com/dnf-game-manager/server/db/item.db"
     # Database logger.
     [database.logger]
         Path   = "./logs/sql"

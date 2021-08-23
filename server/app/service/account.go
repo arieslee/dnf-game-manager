@@ -3,9 +3,11 @@ package service
 import (
 	"dnf-game-manager/app/common"
 	"dnf-game-manager/app/model"
+	"dnf-game-manager/app/request"
 	"errors"
 	"github.com/gogf/gf/frame/g"
 	"github.com/gogf/gf/net/ghttp"
+	"github.com/gogf/gf/os/gtime"
 	"github.com/gogf/gf/util/gconv"
 )
 
@@ -57,7 +59,7 @@ func (s *accountService) DeleteAccount(r *ghttp.Request) error {
 		return errors.New("要删除的id不能为空")
 	}
 	query := g.DB().Schema("d_taiwan").
-		Model("accounts").Where("id=?", id)
+		Model("accounts").Where("UID=?", id)
 	cloneQuery := query.Clone()
 	row, _ := query.One()
 	if row == nil {
@@ -99,7 +101,7 @@ func (s *accountService) RoleList(r *ghttp.Request) (*model.RoleListResult, erro
 	dataList := make([]*model.RoleListItem, 0)
 	page, pageSize, _ := s.Base.PageComputedStructs(r, count, res)
 	list, err := query.
-		Fields("m_id,charac_no,charac_name,job,lev,grow_type").
+		Fields("m_id,charac_no,charac_name,job,lev,grow_type,element_resist").
 		Order("charac_no ASC").
 		Page(page, pageSize).
 		All()
@@ -116,6 +118,9 @@ func (s *accountService) RoleList(r *ghttp.Request) (*model.RoleListResult, erro
 			} else {
 				item["cera"] = cera["cera"]
 			}
+			//item["element_resist"] = gconv.Bytes(item["element_resist"])
+			//output, _ := iconv.ConvertString(gconv.String(item["charac_name"]), "latin1", "utf-8")
+			//item["charac_name"] = output
 			result = append(result, item)
 		}
 		err := gconv.Structs(result, &dataList)
@@ -125,4 +130,49 @@ func (s *accountService) RoleList(r *ghttp.Request) (*model.RoleListResult, erro
 	}
 	res.DataList = dataList
 	return res, nil
+}
+func (s *accountService) RoleAdd(r *ghttp.Request) error {
+	req := &request.RoleRequest{}
+	if err := r.Parse(req); err != nil {
+		return err
+	}
+	row, _ := g.DB().Schema("d_taiwan").
+		Model("accounts").Where("UID=?", req.Mid).One()
+	if row == nil {
+		return errors.New("账号不存在")
+	}
+	date := gtime.Now().Format("Y-m-d H:i:s")
+	// "m_id,charac_no,charac_name,job,lev,grow_type"
+	info := g.Map{
+		"m_id":           req.Mid,
+		"charac_name":    req.CharacName,
+		"job":            req.Job,
+		"lev":            req.Lev,
+		"element_resist": []byte("none"),
+		"spec_property":  []byte("none"),
+		"VIP":            0,
+		"create_time":    date,
+	}
+	_, err := g.DB().Schema("taiwan_cain").
+		Model("charac_info").Data(info).Insert()
+	if err != nil {
+		g.Log().Line(true).Println("角色添加失败,err=%s", err.Error())
+		return errors.New("角色添加失败")
+	}
+	if req.Cera > 0 {
+		ceraData := g.Map{
+			"account":  req.Mid,
+			"cera":     req.Cera,
+			"mod_tran": 13,
+			"mod_date": date,
+			"reg_date": date,
+		}
+		_, err = g.DB().Schema("taiwan_billing").Model("cash_cera").Data(ceraData).Insert()
+		if err != nil {
+			g.Log().Line(true).Println("金币增加失败,err=%s", err.Error())
+			return errors.New("金币增加失败")
+		}
+	}
+
+	return nil
 }

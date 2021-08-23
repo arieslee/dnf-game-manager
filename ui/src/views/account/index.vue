@@ -36,6 +36,9 @@
                             <v-btn color="primary" class="mr-2" small>
                                 详情
                             </v-btn>
+                            <v-btn @click="addRole(item)" color="info" class="mr-2" small>
+                                添加角色
+                            </v-btn>
                             <v-btn @click="onDelete(item)" color="error" small>
                                 删除
                             </v-btn>
@@ -52,15 +55,23 @@
                 </v-col>
             </v-row>
         </v-container>
+        <add-role :show="addRoleShow" :mid="mid" @cancel="onCancel"></add-role>
     </div>
 </template>
 
 <script>
 import {getAccountList,deleteAccount} from "@/api/account";
+
+import AddRole from "@/components/AddRole";
 export default {
+    components:{
+        AddRole,
+    },
     data() {
         return {
             loading:false,
+            addRoleShow:false,
+            mid:null,
             headers: [
                 {
                     text: '人物UID',
@@ -111,17 +122,6 @@ export default {
             this.totalCount = data['total_count'];
             this.currentPage = data['current_page'];
             this.totalPage = data['total_page'];
-            for(let i =0;i<this.dataList.length;i++){
-                let item = {...this.dataList[i]};
-                let job = this.jobFormat(item.job,item.grow_type);
-                if(!job){
-                    this.dataList[i].job_data = {
-                        label:'未知',
-                    };
-                }else{
-                    this.dataList[i].job_data = job;
-                }
-            }
         },
         getList(params){
             this.loading = true;
@@ -156,6 +156,13 @@ export default {
         },
         pageChange(v){
             this.getList({page:v});
+        },
+        addRole(item){
+            this.addRoleShow = true;
+            this.mid = item['UID'];
+        },
+        onCancel(){
+            this.addRoleShow = false;
         }
     },
 }

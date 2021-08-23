@@ -31,6 +31,7 @@ func Build() {
 		g.GET("account", api.Account.ListHandler)
 		g.POST("account/delete", api.Account.AccountDeleteHandler)
 		g.GET("role", api.Account.RoleListHandler)
+		g.POST("role/add", api.Account.RoleAddHandler)
 		g.GET("item", api.Item.ListHandler)
 		g.POST("mail", api.Mail.SendHandler)
 	})

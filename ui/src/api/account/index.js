@@ -5,6 +5,10 @@ export const getAccountList = (params)=>{
 export const getRoleList = (params)=>{
     return get("/role",{params:params});
 }
+export const addRole = (params) => {
+    return post("/role/add",params);
+}
+
 export const deleteAccount=(parmas) => {
     return post('account/delete', parmas);
 }

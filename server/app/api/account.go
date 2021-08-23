@@ -32,3 +32,10 @@ func (a *accountApi) RoleListHandler(r *ghttp.Request) {
 	}
 	response.Success(r, "", list)
 }
+func (a *accountApi) RoleAddHandler(r *ghttp.Request) {
+	err := service.Account.RoleAdd(r)
+	if err != nil {
+		response.Error(r, err.Error())
+	}
+	response.Success(r, "添加成功")
+}

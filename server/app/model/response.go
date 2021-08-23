@@ -7,13 +7,14 @@ type BaseListResult struct {
 	Page       int   `json:"current_page"`
 }
 type RoleListItem struct {
-	Mid        int    `json:"m_id"`
-	CharacNo   int    `json:"charac_no"`
-	CharacName string `json:"charac_name"`
-	Job        int    `json:"job"`
-	Lev        int    `json:"lev"`
-	GrowType   int    `json:"grow_type"`
-	Cera       int    `json:"cera"`
+	Mid           int    `json:"m_id"`
+	CharacNo      int    `json:"charac_no"`
+	CharacName    string `json:"charac_name"`
+	Job           int    `json:"job"`
+	Lev           int    `json:"lev"`
+	GrowType      int    `json:"grow_type"`
+	Cera          int    `json:"cera"`
+	ElementResist []byte `json:"element_resist"`
 }
 
 // RoleListResult 列表结果
